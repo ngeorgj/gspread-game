@@ -18,25 +18,25 @@ class GSheet:
                 'population' : 'C10',
                 'minerals' : 'C11',
                 'gas' : 'C12',
-                'm_ships' : 'C15',
-                'g_ships' : 'C16',
-                'atk_ships' : 'C17'
+                'mining_ships' : 'C15',
+                'gas_ships' : 'C16',
+                'attack_ships' : 'C17'
             },
             'P2': {
                 'population': 'F10',
                 'minerals': 'F11',
                 'gas': 'F12',
-                'm_ships': 'F15',
-                'g_ships': 'F16',
-                'atk_ships': 'F17'
+                'mining_ships': 'F15',
+                'gas_ships': 'F16',
+                'attack_ships': 'F17'
             },
             'P3': {
                 'population': 'I10',
                 'minerals': 'I11',
                 'gas': 'I12',
-                'm_ships': 'I15',
-                'g_ships': 'I16',
-                'atk_ships': 'I17'
+                'mining_ships': 'I15',
+                'gas_ships': 'I16',
+                'attack_ships': 'I17'
             }
         }
 

@@ -1,11 +1,13 @@
 import time
 
 from game.gsheet import GSheet
+from game.hardcoded_variables import EXTINCT
 
 
 class Server(GSheet):
     game_name = 'SpaceCraft'
     server_list = ['Dinasty']
+    main_server_name = "Dinasty"
 
     cell_dinasty = "J6"
 
@@ -59,3 +61,23 @@ class Server(GSheet):
                 self.write_cell(cell, "")
 
         self.change_turn_field('P1')
+
+    def clean_check(self):
+        players_data = self.response[self.main_server_name]['response']
+
+        statuses = []
+        players_and_status = {}
+
+        for player in players_data:
+            status = players_data[player][player]['status']
+            players_and_status[player] = status
+            statuses.append(status)
+
+        endgame_counter = 0
+        for status in statuses:
+            if status == EXTINCT:
+                endgame_counter += 1
+
+        if endgame_counter == 2:
+            print("[LOG] Game Tables are being Wiped out.")
+            self.clean()

@@ -1,8 +1,8 @@
 import time
 from pprint import pprint
 
-from .instances import dinasty, game_data
-from .hardcoded_variables import EXTINCT
+from .instances import dinasty, game_data, press_key_to_continue
+from .hardcoded_variables import EXTINCT, P1, P2, P3
 from .player import Player
 
 
@@ -17,9 +17,9 @@ class Game:
             'population': 'C10',
             'minerals': 'C11',
             'gas': 'C12',
-            'm_ships': 'C15',
-            'g_ships': 'C16',
-            'atk_ships': 'C17'
+            'mining_ships': 'C15',
+            'gas_ships': 'C16',
+            'attack_ships': 'C17'
         },
         'player2': {
             'nickname': 'F5',
@@ -28,9 +28,9 @@ class Game:
             'population': 'F10',
             'minerals': 'F11',
             'gas': 'F12',
-            'm_ships': 'F15',
-            'g_ships': 'F16',
-            'atk_ships': 'F17'
+            'mining_ships': 'F15',
+            'gas_ships': 'F16',
+            'attack_ships': 'F17'
         },
         'player3': {
             'nickname': 'I5',
@@ -39,9 +39,9 @@ class Game:
             'population': 'I10',
             'minerals': 'I11',
             'gas': 'I12',
-            'm_ships': 'I15',
-            'g_ships': 'I16',
-            'atk_ships': 'I17'
+            'mining_ships': 'I15',
+            'gas_ships': 'I16',
+            'attack_ships': 'I17'
         }
     }
 
@@ -65,10 +65,10 @@ class Game:
 
         if len(slots) == 0:
             print('No room for new players! \n \n')
-            input("Press 'any' key to close the game. \n")
+            press_key_to_continue()
             quit()
 
-        answer = self._get_slots(slots)
+        answer = self._alocate_player(slots)
         slot = self.positions[answer]
 
         if answer in slots:
@@ -81,12 +81,23 @@ class Game:
             dinasty.write_cell(self.keymapping[slot]['race'], player.race)
 
             # From Starting Values
-            dinasty.write_cell(self.keymapping[slot]['population'], game_data['races'][player.race]['sv']['population'])
-            dinasty.write_cell(self.keymapping[slot]['minerals'], game_data['races'][player.race]['sv']['minerals'])
-            dinasty.write_cell(self.keymapping[slot]['gas'], game_data['races'][player.race]['sv']['gas'])
-            dinasty.write_cell(self.keymapping[slot]['m_ships'], game_data['races'][player.race]['sv']['m_ships'])
-            dinasty.write_cell(self.keymapping[slot]['g_ships'], game_data['races'][player.race]['sv']['g_ships'])
-            dinasty.write_cell(self.keymapping[slot]['atk_ships'], game_data['races'][player.race]['sv']['atk_ships'])
+            dinasty.write_cell(self.keymapping[slot]['population'],
+                               game_data['races'][player.race]['sv']['population'])
+
+            dinasty.write_cell(self.keymapping[slot]['minerals'],
+                               game_data['races'][player.race]['sv']['minerals'])
+
+            dinasty.write_cell(self.keymapping[slot]['gas'],
+                               game_data['races'][player.race]['sv']['gas'])
+
+            dinasty.write_cell(self.keymapping[slot]['mining_ships'],
+                               game_data['races'][player.race]['sv']['mining_ships'])
+
+            dinasty.write_cell(self.keymapping[slot]['gas_ships'],
+                               game_data['races'][player.race]['sv']['gas_ships'])
+
+            dinasty.write_cell(self.keymapping[slot]['attack_ships'],
+                               game_data['races'][player.race]['sv']['attack_ships'])
 
         time.sleep(6)
         dinasty.get_response()
@@ -104,37 +115,12 @@ class Game:
 
         self.server.clean()
 
-    def _get_slots(self, slots):
-        print(slots)
-        print("Choose a Slot Below:")
-        for slot in slots:
-            print(" > ", slot)
-        print()
-        answer = input(" > ").upper()
-        if answer not in self.positions:
-            print("Please supply a valid answer!")
-            answer = input(" > ")
-            if answer in slots:
-                return answer
-        else:
-            return answer
+    def _alocate_player(self, slots):
+        """ This function will only be used if there are slots in the game room."""
+        if P1 in slots:
+            return P1
+        elif P2 in slots:
+            return P2
+        elif P3 in slots:
+            return P3
 
-    def clean_check(self):
-        players_data = dinasty.response[self.main_server_name]['response']
-
-        statuses = []
-        players_and_status = {}
-
-        for player in players_data:
-            status = players_data[player][player]['status']
-            players_and_status[player] = status
-            statuses.append(status)
-
-        endgame_counter = 0
-        for status in statuses:
-            if status == EXTINCT:
-                endgame_counter += 1
-
-        if endgame_counter == 2:
-            print("[LOG] Game Tables are being Wiped out.")
-            dinasty.clean()

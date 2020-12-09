@@ -7,4 +7,7 @@ class Price:
 
     def convert(self, value):
         value = value.split(',')
-        return [value[0], value[1]]
+        return [int(value[0]), int(value[1])]
+
+    def __repr__(self):
+        return f"COST : {self.minerals}M & {self.gas}G"
