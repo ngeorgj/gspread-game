@@ -1,7 +1,6 @@
 import time
 
 from game.gsheet import GSheet
-from game.instances import P1
 
 
 class Server(GSheet):
@@ -59,4 +58,4 @@ class Server(GSheet):
             for cell in group_of_cells:
                 self.write_cell(cell, "")
 
-        self.change_turn_field(P1)
+        self.change_turn_field('P1')

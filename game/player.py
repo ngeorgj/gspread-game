@@ -1,8 +1,15 @@
 from .gsheet import GSheet
-from .instances import races, dinasty, game_data, get_player_info, P1, P2, P3
+from .hangar import Hangar
+from .instances import races, dinasty, game_data, get_player_info
+
+from .hardcoded_variables import (
+    P1, P2, P3, ATTACK_GROUP,
+    EXTRACT_GROUP, REFRESH_GROUP,
+    MINE_GROUP, HANGAR_GROUP
+)
 
 
-class Player(GSheet):
+class Player(GSheet, Hangar):
     myturn = False
 
     position = ""
@@ -99,18 +106,24 @@ class Player(GSheet):
 
         answer = str(input(" > ")).lower()
 
-        if answer == 'mine':
+        if answer in MINE_GROUP:
             self.mine()
-        elif answer in ['extract_gas', 'get gas', 'extract']:
+
+        elif answer in EXTRACT_GROUP:
             self.extract_gas()
-        elif answer in ['ref', 'refresh', 'is my turn?']:
+
+        elif answer in ATTACK_GROUP:
+            self.attack()
+
+        elif answer in HANGAR_GROUP:
+            self.ship_market()
+
+        elif answer in REFRESH_GROUP:
             if self.check_is_my_turn():
                 self.options()
             else:
                 print("Not your turn yet!")
                 self.options()
-        elif answer in ['attack', 'atk', 'deboxar', 'atacar']:
-            self.attack()
 
         self.options()
 

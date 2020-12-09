@@ -1,8 +1,9 @@
 import time
 from pprint import pprint
 
-from game.instances import dinasty, game_data, EXTINCT
-from game.player import Player
+from .instances import dinasty, game_data
+from .hardcoded_variables import EXTINCT
+from .player import Player
 
 
 class Game:
@@ -54,8 +55,6 @@ class Game:
         self.server = dinasty
         self.player = self.enter_game()
         self.play()
-        #self.clean_check()
-
 
     def enter_game(self):
         # Create player instance
