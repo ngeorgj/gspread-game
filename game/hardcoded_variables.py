@@ -22,3 +22,10 @@ REFRESH_GROUP = ['ref', 'refresh', 'is my turn?']
 EXTRACT_GROUP = ['extract_gas', 'get gas', 'extract']
 MINE_GROUP = ['mine', 'gather-minerals']
 HANGAR_GROUP = ['hangar', 'buy', 'go to hangar']
+
+ACTIONS_GROUP = []
+for group in [ATTACK_GROUP, REFRESH_GROUP, EXTRACT_GROUP, MINE_GROUP, HANGAR_GROUP]:
+    for item in group:
+        ACTIONS_GROUP.append(item)
+
+print(ACTIONS_GROUP)

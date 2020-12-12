@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4197a50-042f-4023-a38a-116f47687c87" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gsheet_game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gsheet_game.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/game.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/gsheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/gsheet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/hangar.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/hangar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/instances.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/instances.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/price.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/price.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/game/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/game/hardcoded_variables.py" beforeDir="false" afterPath="$PROJECT_DIR$/game/hardcoded_variables.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +44,7 @@
       <recent name="C:\Users\georg\Desktop\gsheet_game\game" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.functions (1)">
+  <component name="RunManager" selected="Python.hardcoded_variables">
     <configuration name="functions (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gsheet_game" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,7 +108,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="hardcoded_variables" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="gsheet_game" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -124,11 +116,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/game" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\georg\Desktop\gsheet_game\game\game.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/game/hardcoded_variables.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -160,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.hardcoded_variables" />
         <item itemvalue="Python.functions (1)" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.game (1)" />
         <item itemvalue="Python.functions" />
-        <item itemvalue="Python.game" />
       </list>
     </recent_temporary>
   </component>
@@ -182,22 +174,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1493" height="217" key="GridCell.Tab.0.bottom" timestamp="1607534054419">
+    <state width="1515" height="217" key="GridCell.Tab.0.bottom" timestamp="1607789794580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="217" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607534054419" />
-    <state width="1493" height="217" key="GridCell.Tab.0.center" timestamp="1607534054419">
+    <state width="1515" height="217" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1607789794580" />
+    <state width="1515" height="217" key="GridCell.Tab.0.center" timestamp="1607789794580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="217" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607534054419" />
-    <state width="1493" height="217" key="GridCell.Tab.0.left" timestamp="1607534054419">
+    <state width="1515" height="217" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1607789794580" />
+    <state width="1515" height="217" key="GridCell.Tab.0.left" timestamp="1607789794580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="217" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607534054419" />
-    <state width="1493" height="217" key="GridCell.Tab.0.right" timestamp="1607534054419">
+    <state width="1515" height="217" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1607789794580" />
+    <state width="1515" height="217" key="GridCell.Tab.0.right" timestamp="1607789794580">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="217" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607534054419" />
+    <state width="1515" height="217" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1607789794580" />
     <state x="277" y="55" key="SettingsEditor" timestamp="1607531666166">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
